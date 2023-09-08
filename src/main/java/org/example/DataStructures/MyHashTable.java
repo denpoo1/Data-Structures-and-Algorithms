@@ -1,4 +1,4 @@
-package org.example.DataStructures.DynamicArrays;
+package org.example.DataStructures;
 
 import java.util.LinkedList;
 import java.util.Map;
@@ -75,6 +75,7 @@ public class MyHashTable<T1, T2> {
             }
         }
     }
+
 
 
     private int getIndex(Object key) {

@@ -1,4 +1,4 @@
-package org.example.DataStructures.DynamicArrays;
+package org.example.DataStructures;
 
 import java.util.Arrays;
 
