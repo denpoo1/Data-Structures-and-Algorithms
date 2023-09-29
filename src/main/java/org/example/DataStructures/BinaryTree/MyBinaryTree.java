@@ -2,116 +2,86 @@ package org.example.DataStructures.BinaryTree;
 
 public class MyBinaryTree {
     private Node root;
-    private int height;
-    private int quantityNodes;
 
-    public void insert(int item) {
-        int height = 0;
-        if (quantityNodes == 0) {
-            root = new Node(null, null, item, 0);
-            quantityNodes++;
-            return;
-        }
-        quantityNodes++;
-        Node element = root;
-        while (true) {
-            height++;
-            if (item > element.getItem()) {
-                if (element.getRight() == null) {
-                    element.setRight(new Node(null, null, item, 0));
-                    if (this.height < height) this.height = height;
-                    break;
-                }
-                element = element.getRight();
-            } else if (item < element.getItem()) {
-                if (element.getLeft() == null) {
-                    element.setLeft(new Node(null, null, item, 0));
-                    if (this.height < height) this.height = height;
-                    break;
-                }
-                element = element.getLeft();
-            } else if (item == element.getItem()) {
-                throw new IndexOutOfBoundsException();
-            }
-        }
-    }
+    private static class Node {
+        int data;
+        Node left, right;
 
-    public void remove(int item) {
-        int height = 0;
-        if (quantityNodes == 1) {
-            root = new Node(null, null, 0, 0);
-            quantityNodes--;
-            return;
-        }
-        Node element = root;
-        while (true) {
-            height++;
-            if (item > element.getItem()) {
-                if (element.getRight().getItem() == item) {
-                    Node leftBranch = element.getRight().getLeft();
-                    Node rightBranch = element.getRight().getRight();
-                    Node lastLeftNodeInRightBranch = searchLastLeftNode(rightBranch);
-                    lastLeftNodeInRightBranch.setLeft(leftBranch);
-                    element = rightBranch;
-                    quantityNodes--;
-                    break;
-                }
-                element = element.getRight();
-            } else if (item < element.getItem()) {
-                if (element.getLeft().getItem() == item) {
-                    Node leftBranch = element.getLeft().getLeft();
-                    Node rightBranch = element.getLeft().getRight();
-                    Node lastLeftNodeInRightBranch = searchLastLeftNode(rightBranch);
-                    lastLeftNodeInRightBranch.setLeft(leftBranch);
-                    element = rightBranch;
-                    quantityNodes--;
-                    break;
-                }
-                element = element.getLeft();
-            }
-        }
-        // не забывать про quantityNodes--
-    }
-
-    private Node searchLastLeftNode(Node node) {
-        if (node.getLeft() == null) return node;
-        Node newNode = node.getLeft();
-        while (true) {
-            if (newNode.getLeft() == null) return newNode;
-            newNode = newNode.getLeft();
+        public Node(int item) {
+            data = item;
+            left = right = null;
         }
     }
 
     public MyBinaryTree() {
-        height = 0;
-        quantityNodes = 0;
+        root = null;
     }
 
-    public Node getRoot() {
+    public void insert(int data) {
+        root = insertRec(root, data);
+    }
+
+    private Node insertRec(Node root, int data) {
+        if (root == null) {
+            root = new Node(data);
+            return root;
+        }
+
+        if (data < root.data) {
+            root.left = insertRec(root.left, data);
+        } else if (data > root.data) {
+            root.right = insertRec(root.right, data);
+        }
+
         return root;
     }
 
-    public void setRoot(Node root) {
-        this.root = root;
+    public void delete(int data) {
+        root = deleteRec(root, data);
     }
 
-    public int getHeight() {
-        return height;
+    private Node deleteRec(Node root, int data) {
+        if (root == null) {
+            return root;
+        }
+
+        if (data < root.data) {
+            root.left = deleteRec(root.left, data);
+        } else if (data > root.data) {
+            root.right = deleteRec(root.right, data);
+        } else {
+            if (root.left == null) {
+                return root.right;
+            } else if (root.right == null) {
+                return root.left;
+            }
+
+            root.data = minValue(root.right);
+
+            root.right = deleteRec(root.right, root.data);
+        }
+
+        return root;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
+    private int minValue(Node root) {
+        int minValue = root.data;
+        while (root.left != null) {
+            minValue = root.left.data;
+            root = root.left;
+        }
+        return minValue;
     }
 
-    public int getQuantityNodes() {
-        return quantityNodes;
+    public void inorder() {
+        inorderRec(root);
     }
 
-    public void setQuantityNodes(int quantityNodes) {
-        this.quantityNodes = quantityNodes;
+    private void inorderRec(Node root) {
+        if (root != null) {
+            inorderRec(root.left);
+            System.out.print(root.data + " ");
+            inorderRec(root.right);
+        }
     }
 }
-
-/*
- * todo Удаление (Deletion) доделать
- * */
