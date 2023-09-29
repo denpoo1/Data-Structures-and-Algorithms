@@ -1,8 +1,6 @@
 package org.example.DataStructures;
 
-import java.util.Hashtable;
-
-public class Exercises {
+public class Test {
 
 
     /**Returns the closest repeating element**/
