@@ -3,10 +3,6 @@ package org.example.Algorithms.Sorting;
 import java.util.Arrays;
 
 public class QuickSort {
-    public static void main(String[] args) {
-        int[] array2 = {0, 8, 9, 20, 7, 12};
-        System.out.println(Arrays.toString(quickSort(array2)));
-    }
 
     public static int[] quickSort(int[] array) {
         if (array.length == 0) return array;
