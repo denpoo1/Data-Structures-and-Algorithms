@@ -1,28 +1,75 @@
 package org.example.Algorithms.Sorting;
 
-import java.util.Arrays;
-
 public class MergeSort {
 
-    public static int[] merge(int[] array1, int[] array2) {
-        int[] destArray = new int[array1.length + array2.length];
-        int pointer1 = 0;
-        int pointer2 = 0;
-        int pointer3 = 0;
-        while (pointer1 + pointer2 != destArray.length) {
-            if (pointer1 != array1.length  && array1[pointer1] < array2[pointer2]) {
-                destArray[pointer3++] = array1[pointer1++];
-            } else {
-                destArray[pointer3++] = array2[pointer2];
-                if (pointer2 != array2.length - 1)  pointer2++;
-            }
+    // Метод для сортировки массива слиянием
+    private static void mergeSort(int[] array, int left, int right) {
+        if (left < right) {
+            // Находим середину массива
+            int middle = (left + right) / 2;
+
+            // Рекурсивно сортируем две половины
+            mergeSort(array, left, middle);
+            mergeSort(array, middle + 1, right);
+
+            // Объединяем отсортированные половины
+            merge(array, left, middle, right);
         }
-        return destArray;
     }
 
-    public static void main(String[] args) {
-        int[] array1 = {1, 2, 3, 4, 5, 11};
-        int[] array2 = {5, 9, 9, 10};
-        System.out.println(Arrays.toString(merge(array1, array2)));
+    // Метод для объединения двух подмассивов
+    private static void merge(int[] array, int left, int middle, int right) {
+        // Размеры временных подмассивов
+        int n1 = middle - left + 1;
+        int n2 = right - middle;
+
+        // Создаем временные подмассивы
+        int[] leftArray = new int[n1];
+        int[] rightArray = new int[n2];
+
+        // Копируем данные во временные подмассивы
+        for (int i = 0; i < n1; ++i)
+            leftArray[i] = array[left + i];
+        for (int j = 0; j < n2; ++j)
+            rightArray[j] = array[middle + 1 + j];
+
+        // Индексы начальных элементов временных подмассивов
+        int i = 0, j = 0;
+
+        // Индекс начального элемента основного массива
+        int k = left;
+        while (i < n1 && j < n2) {
+            // Сравниваем элементы временных подмассивов и записываем минимальный в основной массив
+            if (leftArray[i] <= rightArray[j]) {
+                array[k] = leftArray[i];
+                i++;
+            } else {
+                array[k] = rightArray[j];
+                j++;
+            }
+            k++;
+        }
+
+        // Копируем оставшиеся элементы leftArray[], если они есть
+        while (i < n1) {
+            array[k] = leftArray[i];
+            i++;
+            k++;
+        }
+
+        // Копируем оставшиеся элементы rightArray[], если они есть
+        while (j < n2) {
+            array[k] = rightArray[j];
+            j++;
+            k++;
+        }
+    }
+
+    // Метод для вывода массива на экран
+    private static void printArray(int[] array) {
+        for (int value : array) {
+            System.out.print(value + " ");
+        }
+        System.out.println();
     }
 }

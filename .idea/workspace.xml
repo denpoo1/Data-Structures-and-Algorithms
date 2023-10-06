@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9455be0-3683-4adc-ae1e-c15e1eafee40" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Algorithms/Sorting/MergeSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,7 +169,7 @@
       <workItem from="1695986860850" duration="8611000" />
       <workItem from="1696090023464" duration="143000" />
       <workItem from="1696334040141" duration="128000" />
-      <workItem from="1696429228639" duration="6333000" />
+      <workItem from="1696429228639" duration="6877000" />
     </task>
     <task id="LOCAL-00001" summary="MyLinkedList">
       <option name="closed" value="true" />
