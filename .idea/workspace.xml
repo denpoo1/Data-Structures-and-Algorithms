@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9455be0-3683-4adc-ae1e-c15e1eafee40" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Algorithms/Sorting/QuickSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +63,7 @@
       <recent name="org.example.DataStructures.Queue" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MergeSort">
+  <component name="RunManager" selected="Application.QuickSort">
     <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Algorithms.Sorting.BubbleSort" />
       <module name="DataStructures_and_Algorithms" />
@@ -102,12 +103,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReverseSrting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Algorithms.Recursion.ReverseSrting" />
+    <configuration name="QuickSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Algorithms.Sorting.QuickSort" />
       <module name="DataStructures_and_Algorithms" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.Algorithms.Recursion.*" />
+          <option name="PATTERN" value="org.example.Algorithms.Sorting.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -141,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.QuickSort" />
         <item itemvalue="Application.MergeSort" />
         <item itemvalue="Application.InsertionSort" />
         <item itemvalue="Application.SelectSort" />
         <item itemvalue="Application.BubbleSort" />
-        <item itemvalue="Application.ReverseSrting" />
       </list>
     </recent_temporary>
   </component>
@@ -170,6 +171,7 @@
       <workItem from="1696090023464" duration="143000" />
       <workItem from="1696334040141" duration="128000" />
       <workItem from="1696429228639" duration="6877000" />
+      <workItem from="1696585908792" duration="2235000" />
     </task>
     <task id="LOCAL-00001" summary="MyLinkedList">
       <option name="closed" value="true" />
@@ -238,9 +240,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Algorithms/Sorting/MergeSort.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Algorithms/Sorting/QuickSort.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
