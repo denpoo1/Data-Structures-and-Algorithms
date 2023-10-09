@@ -17,6 +17,6 @@ public class Test {
         graph.addEdge("Stambul", "Lol");
 
 //        graph.dfs("Odessa");
-        System.out.println(graph.getPath("Odessa", "Warsaw"));
+        System.out.println(graph.getPath("Odessa", "Berlin"));
     }
 }

@@ -87,27 +87,46 @@ public class Graph {
         }
     }
 
-    private boolean getPath(Vertex start,
-                            Vertex stop,
-                            HashSet<Vertex> passedVertex,
-                            LinkedList<Vertex> path) {
+    private List<Vertex> getPath(Vertex start, Vertex stop, HashSet<Vertex> visited) {
+        if (start == null || stop == null) {
+            return Collections.emptyList();
+        }
 
-        passedVertex.add(start);
-        path.add(start);
-        if (start.getLabel().equals(stop.getLabel())) {
-            System.out.println(path.toString());
-            return true;
+        LinkedList<Vertex> path = new LinkedList<>();
+        getPathHelper(start, stop, visited, path);
+        return path;
+    }
+
+    private boolean getPathHelper(Vertex current, Vertex stop, HashSet<Vertex> visited, LinkedList<Vertex> path) {
+        visited.add(current);
+        path.add(current);
+
+        if (current.equals(stop)) {
+            return true; // Нашли путь
         }
-        for (Vertex vertex1 : adjVertices.get(start)) {
-            if (!passedVertex.contains(vertex1)) return getPath(vertex1, stop, passedVertex, path);
+
+        for (Vertex neighbor : adjVertices.get(current)) {
+            if (!visited.contains(neighbor)) {
+                if (getPathHelper(neighbor, stop, visited, path)) {
+                    return true;
+                }
+            }
         }
+
+        path.removeLast();
         return false;
     }
 
-    public boolean getPath(String startVertex,
-                           String stopVertex) {
-        HashSet<Vertex> passedVertex = new HashSet<>();
+    public List<Vertex> getPath(String startVertex, String stopVertex) {
+        Vertex start = findVertex(startVertex);
+        Vertex stop = findVertex(stopVertex);
+        HashSet<Vertex> visited = new HashSet<>();
         LinkedList<Vertex> path = new LinkedList<>();
-        return getPath(findVertex(startVertex), findVertex(stopVertex), passedVertex, path);
+
+        if (getPathHelper(start, stop, visited, path)) {
+            return path;
+        } else {
+            return Collections.emptyList();
+        }
     }
 }
