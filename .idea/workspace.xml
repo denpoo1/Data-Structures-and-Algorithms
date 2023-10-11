@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9455be0-3683-4adc-ae1e-c15e1eafee40" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/LeetCodeProblems/HashMap/HashMapProblems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Algorithms/GraphSearch/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Algorithms/GraphSearch/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Algorithms/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Algorithms/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,12 +60,15 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/org/example/DataStructures" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.example.Algorithms.Recursion" />
       <recent name="org.example.DataStructures.Queue" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Application.HashMapProblems">
     <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Algorithms.Searching.BinarySearch" />
       <module name="DataStructures_and_Algorithms" />
@@ -91,12 +95,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HeapSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Algorithms.Sorting.HeapSort" />
+    <configuration name="HashMapProblems" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.LeetCodeProblems.HashMap.HashMapProblems" />
       <module name="DataStructures_and_Algorithms" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.Algorithms.Sorting.*" />
+          <option name="PATTERN" value="org.example.LeetCodeProblems.HashMap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -143,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HashMapProblems" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.Graph" />
         <item itemvalue="Application.BinarySearch" />
         <item itemvalue="Application.LinearSearch" />
-        <item itemvalue="Application.HeapSort" />
       </list>
     </recent_temporary>
   </component>
@@ -175,7 +179,14 @@
       <workItem from="1696585908792" duration="5265000" />
       <workItem from="1696675403705" duration="5919000" />
       <workItem from="1696688817870" duration="3299000" />
-      <workItem from="1696837733802" duration="7282000" />
+      <workItem from="1696837733802" duration="7328000" />
+      <workItem from="1696849159989" duration="8000" />
+      <workItem from="1696849301288" duration="447000" />
+      <workItem from="1696864345084" duration="301000" />
+      <workItem from="1696934468770" duration="237000" />
+      <workItem from="1696935012157" duration="2766000" />
+      <workItem from="1696939671350" duration="6141000" />
+      <workItem from="1697043170035" duration="3231000" />
     </task>
     <task id="LOCAL-00001" summary="MyLinkedList">
       <option name="closed" value="true" />
@@ -247,11 +258,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Algorithms/Searching/BinarySearch.java</url>
           <line>32</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Algorithms/Test.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
