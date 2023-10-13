@@ -1,22 +1,22 @@
 package org.example.LeetCodeProblems.HashMap;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class HashMapProblems {
     public static void main(String[] args) {
-        String s = "anagram";
-        String t = "nagaram";
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(4);
+        node1.next = node2;
+        node2.next = node3;
 
-        String s1 = "rat";
-        String t1 = "car";
+        ListNode node4 = new ListNode(1);
+        ListNode node5 = new ListNode(3);
+        ListNode node6 = new ListNode(4);
+        node4.next = node5;
+        node5.next = node6;
 
-        String s2 = "anagram";
-        String t2 = "nagaram";
-
-
-        System.out.println(isAnagram(s1, t1));
+        System.out.println(mergeTwoLists(node1, node4));
     }
 
     public static boolean wordPattern(String pattern, String s) {
@@ -108,15 +108,6 @@ public class HashMapProblems {
         return false;
     }
 
-//    Example 1:
-//
-//    Input: s = "anagram", t = "nagaram"
-//    Output: true
-//    Example 2:
-//
-//    Input: s = "rat", t = "car"
-//    Output: false
-
     public static boolean isAnagram(String s, String t) {
         if (s.length() != t.length()) return false;
         HashMap<Character, Integer> mapLetter = new HashMap<>();
@@ -131,5 +122,58 @@ public class HashMapProblems {
             mapLetter.put(t.charAt(x), mapLetter.get(t.charAt(x)) - 1);
         }
         return true;
+    }
+
+    public static boolean isHappy(int n) {
+        Set<Integer> seen = new HashSet<>();
+
+        while (n != 1 && !seen.contains(n)) {
+            seen.add(n);
+            n = getNext(n);
+        }
+
+        return n == 1;
+    }
+
+    private static int getNext(int n) {
+        int sum = 0;
+        while (n > 0) {
+            int digit = n % 10;
+            sum += digit * digit;
+            n /= 10;
+        }
+        return sum;
+    }
+
+    public static boolean hasCycle(ListNode head) {
+        Set<ListNode> seen = new HashSet<>();
+        ListNode currentNode = head;
+        while (currentNode.next != null) {
+            currentNode = currentNode.next;
+            if (seen.contains(currentNode)) return true;
+            else seen.add(currentNode);
+        }
+        return false;
+    }
+
+    public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        if (list1 == null) {
+            return list2;
+        }
+        if (list2 == null) {
+            return list1;
+        }
+
+        ListNode mergedHead;
+
+        if (list1.val < list2.val) {
+            mergedHead = new ListNode(list1.val);
+            mergedHead.next = mergeTwoLists(list1.next, list2);
+        } else {
+            mergedHead = new ListNode(list2.val);
+            mergedHead.next = mergeTwoLists(list1, list2.next);
+        }
+
+        return mergedHead;
     }
 }

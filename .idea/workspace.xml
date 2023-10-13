@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9455be0-3683-4adc-ae1e-c15e1eafee40" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/LeetCodeProblems/HashMap/ListNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Algorithms/LeetCode/Remove_Duplicates_from_Sorted_Array.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LeetCodeProblems/HashMap/HashMapProblems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LeetCodeProblems/HashMap/HashMapProblems.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,7 +187,8 @@
       <workItem from="1696939671350" duration="6141000" />
       <workItem from="1697043170035" duration="3690000" />
       <workItem from="1697060281593" duration="62000" />
-      <workItem from="1697098701074" duration="2945000" />
+      <workItem from="1697098701074" duration="3178000" />
+      <workItem from="1697186685132" duration="3442000" />
     </task>
     <task id="LOCAL-00001" summary="MyLinkedList">
       <option name="closed" value="true" />
@@ -265,6 +266,7 @@
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="org.example.DataStructures.BinaryTree.MyBinaryTree" memberName="root" />
+        <PinnedItemInfo parentTag="org.example.LeetCodeProblems.HashMap.ListNode" memberName="next" />
       </pinned-members>
     </pin-to-top-manager>
   </component>
